@@ -64,7 +64,7 @@
 					options.initCallback.apply(this, [origElem]);
 					origElem.siblings('.iconfirm').remove();
 
-					var html = options.msg + ' ' + options.okHtml + options.separator + options.cancelHtml),
+					var html = options.msg + ' ' + options.okHtml + options.separator + options.cancelHtml,
 					ic = $('<span  />').addClass('iconfirm').html(html);
 
 					origElem.after(ic);
