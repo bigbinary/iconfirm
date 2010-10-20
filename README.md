@@ -1,11 +1,4 @@
-#TODO#
-remove return false. use e.preventDefault()
-
 #iconfirm is an inline confirmation plugin based on jQuery#
-
-# Live Demo #
-
-Coming up
 
 # Usage #
 
@@ -50,3 +43,8 @@ MIT
 # Copyright
 
 Neeraj Singh
+
+#TODO#
+* put a link to demo
+* write test
+* explain why return false is being used
