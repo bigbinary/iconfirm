@@ -33,7 +33,7 @@
 			options.cleanupCallback.apply(this, [origElem]);
 		};
 
-		options.okHtml = "<a href='#' class='inconfirmyes'>" + options.okLabel + "</a>";
+		options.okHtml = "<a href='#' class='iconfirmyes'>" + options.okLabel + "</a>";
 		options.cancelHtml = "<a href='#' class='iconfirmno'>" + options.cancelLabel + "</a>";
 
 		$('a.iconfirmno').live('click', function() {
