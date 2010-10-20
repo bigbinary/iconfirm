@@ -1,5 +1,9 @@
 #iconfirm is an inline confirmation plugin based on jQuery#
 
+# Live Demo #
+
+Coming up
+
 # Usage #
 
     // using default options
