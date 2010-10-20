@@ -34,7 +34,7 @@
 		};
 
 		options.okHtml = "<a href='#' class='inconfirmyes'>" + options.okLabel + "</a>";
-		options.cancelHtml = "<a href='#' class='iconfirmno'>" + options.cancelLable + "</a>";
+		options.cancelHtml = "<a href='#' class='iconfirmno'>" + options.cancelLabel + "</a>";
 
 		$('a.iconfirmno').live('click', function() {
 			var ic = $(this).closest('.iconfirm');
