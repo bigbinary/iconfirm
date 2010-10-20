@@ -36,22 +36,26 @@
 		options.okHtml = "<a href='#' class='iconfirmyes'>" + options.okLabel + "</a>";
 		options.cancelHtml = "<a href='#' class='iconfirmno'>" + options.cancelLabel + "</a>";
 
-		$('a.iconfirmno').live('click', function() {
-			var ic = $(this).closest('.iconfirm');
-			resetElems(ic);
-		});
+		if (!$('body').data('iconfirmLiveHasBeenSet')) {
 
-		$('a.iconfirmyes').live('click', function() {
-			var $this = $(this),
-			ic = $this.closest('.iconfirm'),
-			origElem = ic.parent().find('.iconfirmOriginal');
+			$('a.iconfirmno').live('click', function() {
+				var ic = $(this).closest('.iconfirm');
+				resetElems(ic);
+			});
 
-			options.yesCallback.apply(this, [$this]);
+			$('a.iconfirmyes').live('click', function() {
+				var $this = $(this),
+				ic = $this.closest('.iconfirm'),
+				origElem = ic.parent().find('.iconfirmOriginal');
 
-			resetElems(ic);
+				options.yesCallback.apply(this, [$this]);
 
-      origElem.trigger('click');
-		});
+				resetElems(ic);
+
+				origElem.trigger('click');
+			});
+			$('body').data('iconfirmLiveHasBeenSet', true);
+		}
 
 		return this.each(function() {
 
@@ -82,3 +86,4 @@
 		}); //end of return this.each(function(){})
 	}; //end of plugin
 })(jQuery);
+
