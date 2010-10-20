@@ -28,33 +28,13 @@
 		var options = $.extend(defaults, ops),
 		resetElems = function(ic) {
 			var origElem = ic.parent().find('.iconfirmOriginal');
-			ic.remove();
 			origElem.removeClass('iconfirmOriginal').show();
 			options.cleanupCallback.apply(this, [origElem]);
+			ic.remove();
 		};
 
 		options.okHtml = "<a href='#' class='iconfirmyes'>" + options.okLabel + "</a>";
 		options.cancelHtml = "<a href='#' class='iconfirmno'>" + options.cancelLabel + "</a>";
-
-		if (!$('body').data('iconfirmLiveHasBeenSet')) {
-
-			$('a.iconfirmno').live('click', function() {
-				var ic = $(this).closest('.iconfirm');
-				resetElems(ic);
-			});
-
-			$('a.iconfirmyes').live('click', function() {
-				var $this = $(this),
-				ic = $this.closest('.iconfirm'),
-				origElem = ic.parent().find('.iconfirmOriginal');
-
-				options.yesCallback.apply(this, [$this]);
-
-				origElem.trigger('click');
-				resetElems(ic);
-			});
-			$('body').data('iconfirmLiveHasBeenSet', true);
-		}
 
 		return this.each(function() {
 
@@ -71,6 +51,18 @@
 					ic = $('<span  />').addClass('iconfirm').html(html);
 
 					origElem.after(ic);
+
+					ic.find('a.iconfirmno').bind('click', function() {
+						var ic = $(this).closest('.iconfirm');
+						resetElems(ic);
+					});
+
+					ic.find('a.iconfirmyes').bind('click', function() {
+						options.yesCallback.apply(this, [$(this)]);
+
+						origElem.trigger('click');
+						resetElems(ic);
+					});
 
 					if (options.timeout > 0) {
 						setTimeout(function() {

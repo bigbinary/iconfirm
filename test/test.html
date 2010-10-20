@@ -2,7 +2,6 @@
 <html>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script src="http://github.com/neerajdotname/iconfirm/raw/master/src/incofirm.js"></script>
 <script>
   $(function(){
     $('a.delete1').iconfirm();
@@ -20,7 +19,7 @@
       separator: ' / ',
       initCallback: function(){ alert('initCallback has been invoked') },
       cleanupCallback: function(){ alert('cleanupCallback has been invoked') },
-      yesCallback: function(){ alert('yesCallback has been invoked') }
+      yesCallback: function(){ alert('yesCallback has been invoked'); return false; }
     });
 
   })
@@ -40,12 +39,12 @@
   </div>
 
   <div class='block'> 
-    <p>Custom beahvior with timeout</p>
+    <p>Custom behavior with timeout</p>
     <a href='' class='delete2'>Delete</a>
   </div>
 
   <div class='block'> 
-    <p>Custom beahvior with callbacks</p>
+    <p>Custom behavior with callbacks</p>
     <a href='' class='delete3'>Delete</a>
   </div>
 
