@@ -50,7 +50,7 @@
 
 			resetElems(ic);
 
-			origElem.trigger('click');
+      origElem.trigger('click');
 		});
 
 		return this.each(function() {

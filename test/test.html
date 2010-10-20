@@ -6,18 +6,48 @@
 <script>
   $(function(){
     $('a.delete1').iconfirm();
+
+    $('a.delete2').iconfirm({
+      okLabel: 'proceed',
+      cancelLabel: 'halt',
+      separator: ' / ',
+      timeout: 3000
+    });
+
+    $('a.delete3').iconfirm({
+      okLabel: 'proceed',
+      cancelLabel: 'halt',
+      separator: ' / ',
+      initCallback: function(){ alert('initCallback has been invoked') },
+      cleanupCallback: function(){ alert('cleanupCallback has been invoked') },
+      yesCallback: function(){ alert('yesCallback has been invoked') }
+    });
+
   })
 </script>
 <meta charset=utf-8 />
 <title>iconfirm test</title>
 <style>
   .iconfirm {background: yellow; padding: 3px}
+  .block {padding:10px; background: #efefef; margin: 20px; }
 </style>
 </head>
 <body>
-   
-  <a href='' class='delete1'>Delete</a>
 
+  <div class='block'> 
+    <p>Default behavior</p>
+    <a href='' class='delete1'>Delete</a>
+  </div>
+
+  <div class='block'> 
+    <p>Custom beahvior with timeout</p>
+    <a href='' class='delete2'>Delete</a>
+  </div>
+
+  <div class='block'> 
+    <p>Custom beahvior with callbacks</p>
+    <a href='' class='delete3'>Delete</a>
+  </div>
 
 </body>
 </html>
