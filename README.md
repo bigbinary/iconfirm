@@ -1,5 +1,8 @@
 #iconfirm is an inline confirmation plugin based on jQuery#
 
+# Demo #
+[http://neerajdotname.github.com/iconfirm](http://neerajdotname.github.com/iconfirm)
+
 # Usage #
 
     // using default options
@@ -45,6 +48,5 @@ MIT
 Neeraj Singh
 
 #TODO#
-* put a link to demo
 * write test
 * explain why return false is being used
