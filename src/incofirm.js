@@ -50,9 +50,8 @@
 
 				options.yesCallback.apply(this, [$this]);
 
-				resetElems(ic);
-
 				origElem.trigger('click');
+				resetElems(ic);
 			});
 			$('body').data('iconfirmLiveHasBeenSet', true);
 		}
