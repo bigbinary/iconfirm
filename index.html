@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://github.com/neerajdotname/iconfirm/raw/master/src/incofirm.js"></script>
+
+<script>
+  $(function(){
+    $('a.delete1').iconfirm();
+
+    $('a.delete2').iconfirm({
+      okLabel: 'proceed',
+      cancelLabel: 'halt',
+      separator: ' / ',
+      timeout: 3000
+    });
+
+    $('a.delete3').iconfirm({
+      okLabel: 'proceed',
+      cancelLabel: 'halt',
+      separator: ' / ',
+      initCallback: function(){ alert('initCallback has been invoked') },
+      cleanupCallback: function(){ alert('cleanupCallback has been invoked') },
+      yesCallback: function(){ alert('yesCallback has been invoked'); return false; }
+    });
+
+  })
+</script>
+<meta charset=utf-8 />
+<title>iconfirm test</title>
+<style>
+  .iconfirm {background: yellow; padding: 3px}
+  .block {padding:10px; background: #efefef; margin: 20px; }
+</style>
+</head>
+<body>
+
+  <div class='block'> 
+    <p>Default behavior</p>
+    <a href='' class='delete1'>Delete</a>
+  </div>
+
+  <div class='block'> 
+    <p>Custom behavior with timeout</p>
+    <a href='' class='delete2'>Delete</a>
+  </div>
+
+  <div class='block'> 
+    <p>Custom behavior with callbacks</p>
+    <a href='' class='delete3'>Delete</a>
+  </div>
+
+</body>
+</html>
+
