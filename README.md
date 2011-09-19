@@ -1,10 +1,10 @@
 #iconfirm is an inline confirmation plugin based on jQuery#
 
-## Demo
+### Demo
 
 [http://neerajdotname.github.com/iconfirm](http://neerajdotname.github.com/iconfirm)
 
-## Usage 
+### Usage 
 
     // using default options
     $("a.delete").iconfirm();
