@@ -19,7 +19,7 @@
        }
      });
 
-# Configuration Options #
+### Configuration Options
 
     msg             string    "Are you sure? "
     okLabel         string    Label for proceed message (default: "Continue").
@@ -32,22 +32,23 @@
                               operation times out.
     yesCallback     function  function that will be invoked when user clicks on 'continue'.
 
-# CSS #
+### CSS
 
 To display the inline confirmation message, a <tt>span</tt> html tag is created with class <tt>iconfirm</tt>. Use this class to properly decorate the confirmation message using css.
 
-# jQuery version #
+### jQuery version
 
 I have tested this plugin with jQuery 1.4.2 and 1.4.3 .
 
-# License
+### License
 
 MIT
 
-# Copyright
+### Copyright
 
-Neeraj Singh
+Neeraj Singh ( neeraj@BigBinary.com )
 
-#TODO#
+### TODO
+
 * write test
 * explain why return false is being used
